@@ -1,0 +1,18 @@
+import os
+
+path_video = input("Masukkan nama file video yang ingin diubah menjadi audio: ")
+
+if not os.path.isfile(path_video):
+    print(f"File video '{path_video}' tidak ditemukan.")
+    exit()
+
+path_audio = input("Masukkan nama file untuk file audio: ")
+
+command = f"ffmpeg -i {path_video} -vn -acodec libmp3lame {path_audio} > /dev/null 2>&1"
+
+try:
+    print(f"Sedang mengubah video '{path_video}' menjadi audio '{path_audio}'.")
+    os.system(command)
+    print("Pengubahan video menjadi audio selesai.")
+except Exception as e:
+  print(f"Terjadi kesalahan saat mengubah video menjadi audio: {str(e)}")
