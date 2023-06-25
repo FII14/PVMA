@@ -1,1 +1,6 @@
-apt-get update -y > 2&>1
+echo "Sedang menginstal v2a."
+
+apt-get update -y > 2>&1
+apt-get install python3 -y > 2>&1
+
+echo "Proses instalasi selesai."
