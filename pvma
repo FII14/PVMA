@@ -1,10 +1,22 @@
 import os
 from colorama import Fore
 
+os.system('clear')
+
 m = Fore.RED
 p = Fore.RESET
 h = Fore.GREEN
 c = Fore.CYAN
+
+print(f"""{c}
++------------------------------------------+
+| Program : Pengubah Video menjadi Audio   |
+| Pembuat : Rofi [FII14]                   |
+| Github  : https://github.com/FII14/PKSHM |
++------------------------------------------+
+| COPYRIGHT (C) 2023 FII14                 |
++------------------------------------------+
+{p}""")
 
 path_video = input("Masukkan nama file video yang ingin diubah menjadi audio: ")
 
