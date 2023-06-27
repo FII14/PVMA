@@ -1,0 +1,24 @@
+import os
+from colorama import Fore
+
+m = Fore.RED
+p = Fore.RESET
+h = Fore.GREEN
+c = Fore.CYAN
+
+path_video = input("Masukkan nama file video yang ingin diubah menjadi audio: ")
+
+if not os.path.isfile(path_video):
+    print(f"{m}[-] {p}File video '{path_video}' tidak ditemukan.")
+    exit()
+
+path_audio = input("Masukkan nama file untuk file audio: ")
+
+command = f"ffmpeg -i {path_video} -vn -acodec libmp3lame {path_audio} > /dev/null 2>&1"
+
+try:
+    print(f"\nSedang mengubah video '{path_video}' menjadi audio '{path_audio}'.\n")
+    os.system(command)
+    print(f"{h}[+] {p}Pengubahan video menjadi audio selesai.")
+except Exception as e:
+  print(f"{m}[-] {p}Terjadi kesalahan saat mengubah video menjadi audio: {str(e)}")
